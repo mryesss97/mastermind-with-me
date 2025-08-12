@@ -1,0 +1,21 @@
+{
+  "$schema": "https://ui.shadcn.com/schema.json",
+  "style": "new-york",
+  "rsc": false,
+  "tsx": true,
+  "tailwind": {
+    "config": "",
+    "css": "@mastermind-with-me/ui/globals.css",
+    "baseColor": "neutral",
+    "cssVariables": true,
+    "prefix": ""
+  },
+  "aliases": {
+    "components": "@mastermind-with-me/ui/components",
+    "utils": "@mastermind-with-me/ui/lib/utils",
+    "ui": "@mastermind-with-me/ui/components/ui",
+    "lib": "@mastermind-with-me/ui/lib",
+    "hooks": "@mastermind-with-me/ui/hooks"
+  },
+  "iconLibrary": "lucide"
+}
