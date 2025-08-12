@@ -1,0 +1,11 @@
+{
+  "title": "Welcome to Number Logic",
+  "single": "Single Player",
+  "two": "Two Players",
+  "howToPlay": "How to Play",
+  "instructions": [
+    "Guess the secret 4-digit sequence.",
+    "After each guess: \u2713 correct, \u2248 digit in wrong place, \u00d7 not in sequence.",
+    "Solve the sequence before you run out of attempts."
+  ]
+}
