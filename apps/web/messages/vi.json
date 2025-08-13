@@ -1,0 +1,11 @@
+{
+  "title": "Chào mừng đến với Number Logic",
+  "single": "1 Người Chơi",
+  "two": "2 Người Chơi",
+  "howToPlay": "Hướng dẫn chơi",
+  "instructions": [
+    "Hãy đoán dãy 4 số bí mật.",
+    "Sau mỗi lần đoán: \u2713 đúng vị trí, \u2248 đúng số sai vị trí, \u00d7 không có trong đáp án.",
+    "Giải đố trước khi hết lượt."
+  ]
+}
