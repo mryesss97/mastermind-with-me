@@ -31,7 +31,9 @@ export default function Home() {
       </div>
       <Dialog>
         <DialogTrigger asChild>
-          <button className="self-center text-sm underline">{t("howToPlay")}</button>
+          <button className="self-center text-sm underline">
+            {t("howToPlay")}
+          </button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
