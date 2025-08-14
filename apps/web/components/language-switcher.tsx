@@ -1,23 +1,30 @@
 "use client";
-
+import { LANGUAGE_SUPPORTED, LanguageCode } from "@/i18n/constant";
+import { setUserLocale } from "@/i18n/services";
 import { useLocale } from "next-intl";
-import { useRouter, usePathname } from "next-intl/client";
-import { locales } from "@/i18n";
+import React, { useTransition } from "react";
 
 export function LanguageSwitcher() {
   const locale = useLocale();
-  const router = useRouter();
-  const pathname = usePathname();
+  const [isPending, startTransition] = useTransition();
+  console.log({ isPending });
+
+  const handleChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const lang = event.target.value as LanguageCode;
+    startTransition(() => {
+      setUserLocale(lang);
+    });
+  };
 
   return (
     <select
+      onChange={handleChange}
       value={locale}
-      onChange={(e) => router.replace(pathname, { locale: e.target.value })}
       className="rounded-md border bg-background p-2 text-sm"
     >
-      {locales.map((cur) => (
-        <option key={cur} value={cur}>
-          {cur.toUpperCase()}
+      {LANGUAGE_SUPPORTED.map((lang) => (
+        <option key={lang.code} value={lang.code}>
+          {lang.name}
         </option>
       ))}
     </select>

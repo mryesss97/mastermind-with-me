@@ -1,24 +1,24 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@mastermind-with-me/ui";
+import { useAppStore } from "@/store/appStore";
 
 export function ThemeToggle() {
-  const [theme, setTheme] = useState<"light" | "dark">(() =>
-    typeof window !== "undefined"
-      ? ((localStorage.getItem("theme") as "light" | "dark") || "light")
-      : "light"
-  );
+  const currentTheme = useAppStore((state) => state.currentTheme);
+  const setTheme = useAppStore((state) => state.setTheme);
 
   useEffect(() => {
     const root = document.documentElement;
-    root.classList.toggle("dark", theme === "dark");
-    localStorage.setItem("theme", theme);
-  }, [theme]);
+    root.classList.toggle("dark", currentTheme === "dark");
+  }, [currentTheme]);
 
   return (
-    <Button variant="outline" onClick={() => setTheme(theme === "light" ? "dark" : "light")}>
-      {theme === "light" ? "Dark" : "Light"} Mode
+    <Button
+      variant="outline"
+      onClick={() => setTheme(currentTheme === "light" ? "dark" : "light")}
+    >
+      {currentTheme === "light" ? "Dark" : "Light"} Mode
     </Button>
   );
 }
